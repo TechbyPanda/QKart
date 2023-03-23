@@ -5,7 +5,7 @@ import Login from "./components/Login";
 import Products from "./components/Products";
 import Checkout from './components/Checkout'
 import Thanks from './components/Thanks'
-
+// front end url : https://641c1c821e083e15101fb394--otakukart.netlify.app/
 export const config = {
   endpoint: `http://${ipConfig.workspaceIp}:8082/api/v1`,
   // live url
