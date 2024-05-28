@@ -7,7 +7,7 @@ import "./Header.css";
 
 const Header = ({ children, hasHiddenAuthButtons }) => {
   const history = useHistory();
-  const username = localStorage.getItem("username");
+  const email = localStorage.getItem("email");
 
   const handleLogoutClick = () => {
     localStorage.removeItem("username");
@@ -23,11 +23,11 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
       {children}
       <div>
         {
-        (username && (
+        (email && (
           <>
             <Stack direction="row" alignItems="center" spacing={1}>
-              <Avatar alt={username} src="./public/avatar.png" />
-              <Typography variant="subtitle1">{username}</Typography>
+              <Avatar alt={email} src="./public/avatar.png" />
+              <Typography variant="subtitle1">{email}</Typography>
               <Button variant="text" onClick={handleLogoutClick}>
                 Logout
               </Button>
@@ -37,7 +37,7 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
         (!hasHiddenAuthButtons && (
           <>
             <Button variant="text" onClick={() => history.push('/login')}>Login</Button>
-            <Button variant="contained"onClick={() => history.push('/register')}>Register</Button>
+            <Button variant="contained"onClick={() => history.push('/v1/register')}>Register</Button>
           </>
         )) ||
         (
